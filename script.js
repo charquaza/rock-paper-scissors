@@ -48,3 +48,32 @@ function playOneRound() {
     }
 }
 
+function game() {
+    var playerScore = 0;
+    var computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let resultOfRound = playOneRound();
+
+        if (resultOfRound === undefined) {
+            console.log("Oops, we're skipping this round...");
+            continue;
+        }
+
+        if (resultOfRound.slice(0, 8) === "You win") {
+            playerScore++;
+        } else if (resultOfRound.slice(0, 7) === "You lose") {
+            computerScore++;
+        } 
+        
+        console.log(resultOfRound);
+    }
+
+    if (playerScore > computerScore) {
+        console.log("You win!!");
+    } else if (playerScore < computerScore) {
+        console.log("You lose ]:");
+    } else {
+        console.log("There is no winner.");
+    }
+}
