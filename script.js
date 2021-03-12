@@ -4,16 +4,16 @@ function computerPlay() {
     return playChoices[randNum];
 }
 
-function playOneRound(playerSelection, computerSelection) {
+function playOneRound() {
     var playerInput = prompt("Let's play rock, paper, scissors! Enter rock, paper, or scissors:");
 
     if (playerInput) {
-        playerSelection = playerInput.toLowerCase();
+        var playerSelection = playerInput.toLowerCase();
     } else {
         return;
     }
 
-    computerSelection = computerPlay();
+    var computerSelection = computerPlay();
 
     switch (playerSelection) {
         case "rock":
@@ -47,3 +47,4 @@ function playOneRound(playerSelection, computerSelection) {
             return "Hmm?";
     }
 }
+
